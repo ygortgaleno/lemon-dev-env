@@ -77,4 +77,4 @@ A aplicação em desenvolvimento e produção estará disponível nas portas:
 
 ## 7 - Coverage
 
-O coverage vai estar disponível na pasta raiz do projeto ao executar o docker-compose.test.yml
+O coverage vai estar disponível na pasta raiz do lemon-backend ao executar o docker-compose.test.yml

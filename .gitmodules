@@ -1,3 +1,6 @@
 [submodule "lemon-backend"]
 	path = lemon-backend
 	url = https://github.com/ygortgaleno/lemon-backend.git
+[submodule "lemon-frontend"]
+	path = lemon-frontend
+	url = https://github.com/ygortgaleno/lemon-frontend.git
