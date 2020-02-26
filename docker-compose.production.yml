@@ -1,0 +1,23 @@
+version: '3.6'
+
+services: 
+  lemon-react:
+    image: react-lemon:production
+    container_name: react_lemon_production
+    build:
+      context: ./lemon-frontend
+      dockerfile: ./docker/production.Dockerfile
+    ports:
+      - 3000:3000
+
+  api-lemon:
+    image: api-lemon:production
+    container_name: api_lemon_production
+    build:
+      context: ./lemon-backend
+      dockerfile: ./docker/production.Dockerfile
+    ports:
+      - 3333:3333
+    environment:
+      NODE_ENV: production
+    

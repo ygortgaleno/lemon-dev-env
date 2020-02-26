@@ -1,0 +1,34 @@
+version: '3.6'
+
+services: 
+  lemon-react:
+    image: react-lemon:dev
+    container_name: lemon_react_dev
+    build:
+      context: ./lemon-frontend
+      dockerfile: ./docker/development.Dockerfile
+    volumes:
+      - ./lemon-frontend/package.json:/usr/lemon-react/package.json
+      - ./lemon-frontend/.eslintrc.js:/usr/lemon-react/.eslintrc.js
+      - ./lemon-frontend/src:/usr/lemon-react/src
+      - ./lemon-frontend/public:/usr/lemon-react/public
+    ports:
+      - 3000:3000
+
+  apiLemon:
+    image: api-lemon:dev
+    container_name: api_lemon_dev
+    build:
+      context: ./lemon-backend
+      dockerfile: ./docker/development.Dockerfile
+    volumes:
+      - ./lemon-backend/src:/usr/lemon-api/src
+      - ./lemon-backend/.eslintrc.js:/usr/lemon-api/.eslintrc.js
+      - ./lemon-backend/nodemon.json:/usr/lemon-api/nodemon.json
+      - ./lemon-backend/babel.config.js:/usr/lemon-api/babel.config.js
+      - ./lemon-backend/package.json:/usr/lemon-api/package.json
+      - ./lemon-backend/yarn.lock:/usr/lemon-api/yarn.lock
+    ports:
+      - 3333:3333
+    environment: 
+      NODE_ENV: development

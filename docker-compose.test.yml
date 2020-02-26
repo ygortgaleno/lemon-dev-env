@@ -1,0 +1,16 @@
+version: '3.6'
+
+services:
+  apiLemon:
+    image: api-lemon:test
+    container_name: api_lemon_test
+    build:
+      context: ./lemon-backend
+      dockerfile: ./docker/test.Dockerfile
+    volumes:
+      - ./lemon-backend/__tests__:/usr/lemon-api/__tests__
+      - ./lemon-backend/coverage:/usr/lemon-api/coverage/
+    ports:
+      - 3333:3333
+    environment:
+      NODE_ENV: test
