@@ -1,0 +1,3 @@
+[submodule "lemon-backend"]
+	path = lemon-backend
+	url = https://github.com/ygortgaleno/lemon-backend.git
